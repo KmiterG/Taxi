@@ -7,6 +7,7 @@ namespace Taxi
         static void Main(string[] args)
         {
             TaxiCenter service = new TaxiCenter();
+            var cab = service.Cabs[0];
         }
     }
 }

@@ -19,5 +19,16 @@ namespace Taxi
         public string Car { get; set; }
         public bool IsAvailable { get; set; }
         public District CurrentDistrict { get; set; }
+        public string Status
+        {
+            get
+            {
+                if (IsAvailable)
+                    return "wolny";
+                else
+                    return "zajęty";
+            }
+        }
+
     }
 }
