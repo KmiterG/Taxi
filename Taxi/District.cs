@@ -8,6 +8,14 @@ namespace Taxi
 {
     public class District
     {
-
+        public District(int number, string name, int distance)
+        {
+            Number = number;
+            Name = name;
+            DistanceFromCentrum = distance;
+        }
+        public int Number { get; set; }
+        public string Name { get; set; }
+        public int DistanceFromCentrum { get; set; }
     }
 }
