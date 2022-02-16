@@ -31,7 +31,7 @@ namespace Taxi
             Cabs.Add(new Cab(2, "Dacia Logan", Districts[1]));
             Cabs.Add(new Cab(3, "Toyota Avensis", Districts[2]));
             Cabs.Add(new Cab(4, "Mercedes E220", Districts[3]));
-            Cabs.Add(new Cab(5, "Hyundai Lantra", Districts[4]));
+            Cabs.Add(new Cab(5, "Hyundai Elantra", Districts[4]));
         }
     }
 }
