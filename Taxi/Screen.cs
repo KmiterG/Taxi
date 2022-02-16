@@ -8,6 +8,14 @@ namespace Taxi
 {
     public static class Screen
     {
+        public static void Menu()
+        {
+            Console.WriteLine("WYBIERZ OPCJĘ:");
+            Console.WriteLine("1 => LISTA WSZYSTKICH DZIELNIC I TAKSÓWEK");
+            Console.WriteLine("2 => ZAMÓW TAKSÓWKĘ");
+            Console.WriteLine("3 => ZAKOŃCZ PROGRAM");
+            Console.WriteLine("WYBIERZ 1, 2 LUB 3:");
+        }
         public static void ShowDistrict(TaxiCenter taxicenter)
         {
             Console.WriteLine("LISTA DZIELNIC");
@@ -23,7 +31,8 @@ namespace Taxi
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("SAMOCHÓD | STATUS | AKTUALNA LOKALIZACJA");
             foreach (Cab cab in taxicenter.Cabs)
-                Console.WriteLine($"{taxicenter.Cabs[cab.Id - 1].Car} | {taxicenter.Cabs[cab.Id - 1].Status} | {taxicenter.Cabs[cab.Id - 1].CurrentDistrict}.");
+                Console.WriteLine($"{taxicenter.Cabs[cab.Id - 1].Car} | {taxicenter.Cabs[cab.Id - 1].Status} | {taxicenter.Cabs[cab.Id - 1].CurrentDistrict.Name}");
+            Console.WriteLine("");
         }
     }
 }
