@@ -61,21 +61,29 @@ namespace Taxi
                     {
                         if (mintime == center.Cabs[cab.Id - 1].TravelTime)
                         {
-                            Console.WriteLine($"{center.Cabs[cab.Id - 1].TravelTime} | {center.Cabs[cab.Id - 1].Car}");
                             center.Cabs[cab.Id - 1].IsAvailable = false;
+                            mintime = mintime + 9999;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"ZLECENIE REALIZUJE: {center.Cabs[cab.Id - 1].Car}");
+                            Console.WriteLine($"CZAS DOJAZDU: {center.Cabs[cab.Id - 1].TravelTime} min.");
+                            Console.WriteLine("");
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
-                        Console.WriteLine("");
-                        Console.WriteLine($"{center.Cabs[cab.Id - 1].TravelTime} Czas");
                     }
-                    /*
-                        Console.WriteLine("");
+
+                    Console.WriteLine("LISTA DZIELNIC");
+                    Console.WriteLine("---------------------------------------------------");
+                    Console.WriteLine("NUMER | NAZWA | ILOŚĆ TAKSÓWEK");
                     foreach (District district in center.Districts)
-                        //center.Districts[district.Number - 1].Number
-                        Console.WriteLine($"{center.Districts[district.Number - 1].Number} | {center.Districts[district.Number - 1].Name} | 1 ");
+                        Console.WriteLine($"{center.Districts[district.Number - 1].Number} | {center.Districts[district.Number - 1].Name} | {center.Districts[district.Number - 1].NumberOfCabs} ");
                     Console.WriteLine("");
+                    Console.WriteLine("LISTA TAKSÓWEK");
+                    Console.WriteLine("---------------------------------------------------");
+                    Console.WriteLine("SAMOCHÓD | STATUS | AKTUALNA LOKALIZACJA | Czas Dojazdu");
                     foreach (Cab cab in center.Cabs)
-                        Console.WriteLine($"{center.Cabs[cab.Id - 1].Car} | {center.Cabs[cab.Id - 1].Status} | {center.Cabs[cab.Id - 1].CurrentDistrict.Name}");
-                    */
+                        Console.WriteLine($"{center.Cabs[cab.Id - 1].Car} | {center.Cabs[cab.Id - 1].Status} | {center.Cabs[cab.Id - 1].CurrentDistrict.Name} | ({center.Cabs[cab.Id - 1].TravelTime} min.)");
+                    Console.WriteLine("");
                 }
                 else if (key == 3)
                 {

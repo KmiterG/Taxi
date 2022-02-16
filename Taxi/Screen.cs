@@ -22,7 +22,7 @@ namespace Taxi
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("NUMER | NAZWA | ILOŚĆ TAKSÓWEK");
             foreach (District district in taxicenter.Districts)
-                Console.WriteLine($"{taxicenter.Districts[district.Number - 1].Number} | {taxicenter.Districts[district.Number - 1].Name} | 1 ");
+                Console.WriteLine($"{taxicenter.Districts[district.Number - 1].Number} | {taxicenter.Districts[district.Number - 1].Name} | {taxicenter.Districts[district.Number - 1].NumberOfCabs} ");
         }
         public static void ShowCabs(TaxiCenter taxicenter)
         {

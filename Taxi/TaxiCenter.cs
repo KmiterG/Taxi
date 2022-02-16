@@ -28,7 +28,7 @@ namespace Taxi
         private void CreateCabs()
         {
             Cabs.Add(new Cab(1, "Ford Mondeo", Districts[0]));
-            Cabs.Add(new Cab(2, "Dacio Logan", Districts[1]));
+            Cabs.Add(new Cab(2, "Dacia Logan", Districts[1]));
             Cabs.Add(new Cab(3, "Toyota Avensis", Districts[2]));
             Cabs.Add(new Cab(4, "Mercedes E220", Districts[3]));
             Cabs.Add(new Cab(5, "Hyundai Lantra", Districts[4]));
