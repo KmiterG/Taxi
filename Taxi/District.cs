@@ -13,7 +13,7 @@ namespace Taxi
             Number = number;
             Name = name;
             DistanceFromCentrum = distance;
-            NumberOfCabs = 0;
+            NumberOfCabs = 1;
         }
         public int Number { get; set; }
         public string Name { get; set; }

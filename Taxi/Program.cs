@@ -61,12 +61,16 @@ namespace Taxi
                     {
                         if (mintime == center.Cabs[cab.Id - 1].TravelTime)
                         {
-                            center.Cabs[cab.Id - 1].IsAvailable = false;
                             center.Cabs[cab.Id - 1].CurrentDistrict = center.Districts[selecteddistrict - 1];
+                            center.Cabs[cab.Id - 1].IsAvailable = false;
                             mintime = mintime + 9999;
-                            if (center.Cabs[cab.Id - 1].CurrentDistrict.Name == center.Districts[selecteddistrict - 1].Name)
+                            if (center.Districts[cab.Id - 1].NumberOfCabs != 0)
                             {
-                                center.Districts[selecteddistrict - 1].NumberOfCabs = center.Districts[selecteddistrict - 1].NumberOfCabs + 1;
+                                if (center.Cabs[cab.Id - 1].CurrentDistrict.Number == center.Districts[selecteddistrict - 1].Number)
+                                {
+                                    center.Districts[selecteddistrict - 1].NumberOfCabs = center.Districts[selecteddistrict - 1].NumberOfCabs + 1;
+                                    center.Districts[cab.Id - 1].NumberOfCabs = center.Districts[cab.Id - 1].NumberOfCabs - 1;
+                                }
                             }
                             Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Green;
