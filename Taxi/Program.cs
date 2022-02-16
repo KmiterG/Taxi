@@ -6,8 +6,11 @@ namespace Taxi
     {
         static void Main(string[] args)
         {
-            TaxiCenter service = new TaxiCenter();
-            var cab = service.Cabs[0];
+            TaxiCenter center = new TaxiCenter();
+            var cab = center.Cabs[0];
+
+            Screen.ShowDistrict(center);
+            Screen.ShowCabs(center);
         }
     }
 }
