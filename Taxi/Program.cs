@@ -24,7 +24,6 @@ namespace Taxi
                     Console.WriteLine("PODAJ NUMER DZIELNICY DO KTÓREJ CHCESZ WEZWAĆ TAKSÓWKĘ:");
                     int selecteddistrict = Convert.ToInt32(Console.ReadLine());
                     int distanceselecteddistrict = center.Districts[selecteddistrict - 1].DistanceFromCentrum;
-                    center.Cabs[selecteddistrict - 1].CurrentDistrict.NumberOfCabs = center.Cabs[selecteddistrict - 1].CurrentDistrict.NumberOfCabs + 1;
                     //Console.WriteLine(distanceselecteddistrict);
                     //Console.WriteLine("");
                     foreach (Cab cab in center.Cabs)
@@ -63,8 +62,12 @@ namespace Taxi
                         if (mintime == center.Cabs[cab.Id - 1].TravelTime)
                         {
                             center.Cabs[cab.Id - 1].IsAvailable = false;
-                            center.Cabs[cab.Id - 1].CurrentDistrict.NumberOfCabs = center.Cabs[cab.Id - 1].CurrentDistrict.NumberOfCabs - 1;
+                            center.Cabs[cab.Id - 1].CurrentDistrict = center.Districts[selecteddistrict - 1];
                             mintime = mintime + 9999;
+                            if (center.Cabs[cab.Id - 1].CurrentDistrict.Name == center.Districts[selecteddistrict - 1].Name)
+                            {
+                                center.Districts[selecteddistrict - 1].NumberOfCabs = center.Districts[selecteddistrict - 1].NumberOfCabs + 1;
+                            }
                             Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine($"ZLECENIE REALIZUJE: {center.Cabs[cab.Id - 1].Car}");
