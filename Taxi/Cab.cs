@@ -15,21 +15,11 @@ namespace Taxi
             CurrentDistrict = district;
             IsAvailable = true;
         }
-        public int Id { get; set; }
-        public string Car { get; set; }
+        public int Id { get; }
+        public string Car { get; }
         public bool IsAvailable { get; set; }
         public District CurrentDistrict { get; set; }
         public int TravelTime { get; set; }
-        public string Status
-        {
-            get
-            {
-                if (IsAvailable)
-                    return "wolny";
-                else
-                    return "zajęty";
-            }
-        }
-
+        public string Status => IsAvailable ? "wolny" : "zajęty";
     }
 }

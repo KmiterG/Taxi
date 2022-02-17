@@ -15,9 +15,9 @@ namespace Taxi
             DistanceFromCentrum = distance;
             NumberOfCabs = 1;
         }
-        public int Number { get; set; }
-        public string Name { get; set; }
-        public int DistanceFromCentrum { get; set; }
+        public int Number { get; }
+        public string Name { get; }
+        public int DistanceFromCentrum { get; }
         public int NumberOfCabs { get; set; }
     }
 }
