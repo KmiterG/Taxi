@@ -51,7 +51,7 @@ namespace Taxi
                 {
                     center.Cabs[cab.Id - 1].IsAvailable = false;
                     center.Cabs[cab.Id - 1].CurrentDistrict = center.Districts[selecteddistrict - 1];
-                    mintime = mintime + 9999;
+                    mintime += 9999;
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"ZLECENIE REALIZUJE: {center.Cabs[cab.Id - 1].Car}");
